@@ -553,9 +553,9 @@ bot.action('continue',async (ctx) =>{
         var res = await axios.post(url)
         if (res.data == "Payment Succesful Transfer\n\n\n"){
             var text = "*🟢 Withdraw Request Processed 🟢\n\n💰 Amount: "+toWith+" "+curr+" (Tax : %"+tax+")\n🗂️ Paytm Wallet: *`"+wallet+"`"
-            var payText = "*🟢 Withdraw Request Processed 🟢\n👷 User: *["+ctx.from.id+"](tg://user?id="+ctx.from.id+")*\n\n💰 Amount: "+toWith+" "+curr+" (Tax : %"+tax+")\n🗂️ Paytm Wallet: *`"+wallet+"`\n\n*🟢 Bot: @"+ctx.botInfo.username+"*"
+            var payText = "*🟢 Withdraw Request Processed 🟢\n👷 User: *["+ctx.from.id+"](tg://user?id="+ctx.from.id+")*\n\n💰 Amount: "+toWith+" "+curr+" (Tax : %"100")\n🗂️ Paytm Wallet: *`"+wallet+"`\n\n*🟢 Bot: @"+ctx.botInfo.username+"*"
         }else{
-            var payText = "*🚫 Withdrawal Request Failed\n\n👷 User: *["+ctx.from.id+"](tg://user?id="+ctx.from.id+")*\n\n💰 Amount: "+toWith+" "+curr+" (Tax : %"+tax+")\n🗂️ Paytm Wallet: *`"+wallet+"`*\n\n⛔️ Reason: *`"+res.data+"`"
+            var payText = "*🚫 Withdrawal Request Failed\n\n👷 User: *["+ctx.from.id+"](tg://user?id="+ctx.from.id+")*\n\n💰 Amount: "+toWith+" "+curr+" (Tax : %"100")\n🗂️ Paytm Wallet: *`"+wallet+"`*\n\n⛔️ Reason: *`"+res.data+"`"
             var text = "*🚫 Withdrawal Request Failed\n⛔️ Reason: *`"+res.data+"`"
         }
         ctx.replyWithMarkdown(text,{reply_markup:{keyboard:mainkey,resize_keyboard:true}})
